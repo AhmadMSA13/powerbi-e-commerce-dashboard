@@ -89,39 +89,35 @@ The project consists of **4 main tables**, each with specific purposes and relat
 
 #### **a. List of Orders**
 
-* **Key Columns**: `Order ID`, `Order Date`, `CustomerName`, `City`, `State`
-* **Purpose**: Stores general information for each order.
 * **Relationship**:
 
   * **One-to-Many** with **Order Details** via `Order ID`
+* **Purpose**: Stores general information for each order.
 
 
 #### **b. Order Details**
 
-* **Key Columns**: `Order ID`, `Category`, `Amount`, `Profit`, `Quantity`, `Non Profit`
-* **Purpose**: Contains transaction line-item details for each order.
 * **Relationships**:
 
   * **Many-to-One** with **List of Orders** via `Order ID`
   * **Many-to-One** with both **Sales Target 2024** and **Sales Target 2025** via `Category`
+* **Purpose**: Contains transaction line-item details for each order.
 
 
 #### **c. Sales Target 2024**
 
-* **Key Columns**: `Category`, `Target`, `Year`
-* **Purpose**: Stores 2024 sales targets by category.
 * **Relationship**:
 
   * **One-to-Many** with **Order Details** via `Category`
+* **Purpose**: Stores 2024 sales targets by category.
 
 
 #### **d. Sales Target 2025**
 
-* **Key Columns**: `Category`, `Target`, `Year`
-* **Purpose**: Stores 2025 sales targets by category.
 * **Relationship**:
 
   * **One-to-Many** with **Order Details** via `Category`
+* **Purpose**: Stores 2025 sales targets by category.
 
 
 
